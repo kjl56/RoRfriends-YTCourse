@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+  <h1>Friends List</h1>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th> Name </th>
+        <th> Email </th>
+        <th> Phone </th>
+        <th> Twitter </th>
+        <!-- <th> User Id </th> -->
+        <th colspan="1">  </th>
+      </tr>
+    </thead>
+
+    <tbody id="friends">
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+        <tr>
+          <!-- <%= render friend %> -->
+          <td> <%= link_to friend.first_name + ' ' + friend.last_name, friend %> </td>
+          <td> <%= friend.email %> </td>
+          <td> <%= friend.phone %> </td>
+          <td> <%= friend.twitter %> </td>
+          <!-- <td> <% friend.user_id %> </td> -->
+          <!-- <td> <% link_to "Show this friend", friend %> </td> -->
+          <!-- <td> <% link_to "Edit this friend", edit_friend_path(friend) %> </td> -->
+          <td> <%= button_to "Delete", friend, method: :delete, form: {data: {turbo_confirm: "Are You Sure?"} }, class:"btn btn-outline-danger btn-sm" %> </td>
+        </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+<% else %>
+  <h1>Hello World!</h1>
+<% end %>
