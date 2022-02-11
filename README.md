@@ -1,24 +1,10 @@
-# README
+# Friends List App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app made to learn Ruby on Rails 
+Based on this free tutorial from Codemy: https://www.youtube.com/watch?v=fmyvWz5TUWg
 
-Things you may want to cover:
+changes made to accommodate version upgrades
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+uses:
+* Rails version 7.0.1
+* Devise version 4.8.1
